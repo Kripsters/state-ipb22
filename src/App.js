@@ -2,32 +2,28 @@ import { useState } from "react";
 
 function App() {
   const [mainigais, setMainigais] = useState(0);
-  const [opps, setOpps] = useState(0);
-  const [x, setX] = useState(0);
+  const [ratioChange, setRatioChange] = useState(0);
 
   function addRatio() {
-    setMainigais(mainigais+1);
+    setMainigais(mainigais+parseInt(ratioChange));
   }
 
   function subtractRatio() {
-    setOpps(opps-1);
+    setMainigais(mainigais-parseInt(ratioChange));
   }
 
-  function addCustomX(props) {
-    if (PLACEHOLDER) {
-    setX(x+props);
-    } else {
-      setX("set custom!");
-    }
+  function handleRatioChange(kakens) {
+    setRatioChange(kakens.target.value);
   }
+
   return (
     <div>
-        <button onClick={addRatio}>GANG +1 ratio</button>
         <h1>{mainigais}</h1>
+        <button onClick={addRatio}>GANG +1 ratio</button>
+        <br/>
         <button onClick={subtractRatio}>How many opps left?</button>
-        <h1>{opps}</h1>
-        <button onClick={addCustomX}>Test</button>
-  <h1>{x}</h1>
+        <br/>
+        <input type="number" value={ratioChange} onChange={handleRatioChange}/>
     </div>
   );
 }
