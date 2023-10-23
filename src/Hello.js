@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Hello(props) {
-  const [mainigais, setMainigais] = useState("default");
+  const [mainigais, setMainigais] = useState(props.name);
 
   function handleMainigais(kakens) {
     setMainigais(kakens.target.value);

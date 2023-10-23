@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Counter(props) {
-const [mainigais, setMainigais] = useState(0);
+const [mainigais, setMainigais] = useState(props.number);
   const [ratioChange, setRatioChange] = useState(0);
 
   function addRatio() {
