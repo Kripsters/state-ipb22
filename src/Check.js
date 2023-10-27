@@ -8,7 +8,7 @@ function Check(props) {
   }
   return (
     <>
-      <input type="checkbox" checked={mainigais} onChange={handleMainigais}></input>
+      <input type="checkbox" checked={mainigais} onChange={handleMainigais} ></input>
     </>
   );
 }
